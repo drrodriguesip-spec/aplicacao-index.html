@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-apresentação · Canal Puro e Simples</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1628;
+    --orange:#C2552B;
+    --cream:#F6F0E6;
+    --tan:#E7B585;
+    --ink:#1c2a3d;
+    --line:rgba(10,22,40,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Archivo',sans-serif;
+    background:var(--cream);
+    color:var(--navy);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px 80px}
+
+  /* ---------- Hero ---------- */
+  header{
+    background:var(--navy);
+    color:var(--cream);
+    padding:56px 20px 48px;
+    text-align:center;
+  }
+  .brand-eyebrow{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--tan);font-weight:600;margin-bottom:18px;
+  }
+  header h1{
+    font-family:'Fraunces',serif;font-weight:700;
+    font-size:clamp(28px,6vw,40px);line-height:1.15;
+    max-width:560px;margin:0 auto 14px;
+  }
+  header h1 em{font-style:italic;color:var(--tan)}
+  header p{
+    max-width:480px;margin:0 auto;font-size:15.5px;color:rgba(246,240,230,.82);
+  }
+  .time-chip{
+    display:inline-block;margin-top:22px;
+    border:1px solid rgba(231,181,133,.5);border-radius:999px;
+    padding:7px 16px;font-size:13px;color:var(--tan);font-weight:500;
+  }
+
+  /* ---------- Sections ---------- */
+  .section{margin-top:52px}
+  .sec-label{
+    display:flex;align-items:center;gap:12px;margin-bottom:8px;
+  }
+  .sec-label .dot{
+    width:10px;height:10px;border-radius:50%;background:var(--orange);flex:none;
+  }
+  .sec-label span{
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    font-weight:700;color:var(--orange);
+  }
+  .section h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:24px;margin-bottom:6px;
+  }
+  .sec-sub{font-size:14.5px;color:rgba(10,22,40,.62);margin-bottom:26px}
+
+  .field{margin-bottom:26px}
+  label.q{
+    display:block;font-weight:600;font-size:15.5px;margin-bottom:10px;
+  }
+  label.q .req{color:var(--orange)}
+  input[type=text],input[type=tel],textarea,select{
+    width:100%;
+    font-family:'Archivo',sans-serif;font-size:15.5px;color:var(--navy);
+    background:#fff;
+    border:1.5px solid var(--line);border-radius:10px;
+    padding:13px 14px;outline:none;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  textarea{min-height:104px;resize:vertical}
+  input:focus,textarea:focus,select:focus{
+    border-color:var(--orange);
+    box-shadow:0 0 0 3px rgba(194,85,43,.14);
+  }
+
+  /* option cards (radio / checkbox) */
+  .opts{display:flex;flex-direction:column;gap:9px}
+  .opt{
+    display:flex;align-items:flex-start;gap:11px;
+    background:#fff;border:1.5px solid var(--line);border-radius:10px;
+    padding:12px 14px;cursor:pointer;font-size:15px;
+    transition:border-color .15s, background .15s;
+  }
+  .opt input{margin-top:3px;accent-color:var(--orange);width:16px;height:16px;flex:none}
+  .opt:hover{border-color:rgba(194,85,43,.5)}
+  .opt.checked{border-color:var(--orange);background:#fdf4ef}
+
+  /* confidence slider */
+  .slider-box{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:22px 18px 16px}
+  .slider-val{
+    font-family:'Fraunces',serif;font-weight:700;font-size:44px;
+    text-align:center;color:var(--orange);line-height:1;margin-bottom:4px;
+  }
+  .slider-cap{text-align:center;font-size:13px;color:rgba(10,22,40,.55);margin-bottom:16px}
+  input[type=range]{
+    width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;
+    background:linear-gradient(to right,var(--orange) 0%,var(--orange) 50%,#e8dfd2 50%,#e8dfd2 100%);
+    outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;
+    background:var(--navy);border:3px solid var(--cream);box-shadow:0 1px 5px rgba(10,22,40,.35);cursor:pointer;
+  }
+  input[type=range]::-moz-range-thumb{
+    width:26px;height:26px;border-radius:50%;background:var(--navy);
+    border:3px solid var(--cream);box-shadow:0 1px 5px rgba(10,22,40,.35);cursor:pointer;
+  }
+  .slider-ends{display:flex;justify-content:space-between;font-size:12px;color:rgba(10,22,40,.5);margin-top:8px}
+
+  /* submit */
+  .submit-area{margin-top:56px;text-align:center}
+  .btn{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:16.5px;
+    background:var(--orange);color:#fff;border:none;border-radius:999px;
+    padding:17px 42px;cursor:pointer;width:100%;
+    transition:transform .12s, box-shadow .12s, background .15s;
+    box-shadow:0 4px 16px rgba(194,85,43,.32);
+  }
+  .btn:hover{background:#ad4a24;transform:translateY(-1px)}
+  .btn:active{transform:translateY(0)}
+  .btn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+  .privacy{font-size:12.5px;color:rgba(10,22,40,.5);margin-top:14px}
+  .error-msg{
+    display:none;background:#fdecec;border:1.5px solid #d9534f;color:#8f2320;
+    border-radius:10px;padding:12px 14px;font-size:14px;margin-bottom:16px;text-align:left;
+  }
+
+  /* success */
+  #success{display:none;text-align:center;padding:80px 20px}
+  #success .check{
+    width:72px;height:72px;border-radius:50%;background:var(--orange);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 24px;
+  }
+  #success .check svg{width:34px;height:34px;stroke:#fff;stroke-width:3;fill:none}
+  #success h2{font-family:'Fraunces',serif;font-size:30px;margin-bottom:12px}
+  #success p{max-width:420px;margin:0 auto;color:rgba(10,22,40,.7)}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-eyebrow">Canal Puro e Simples · Mentoria</div>
+  <h1>Antes da nossa conversa, quero te <em>conhecer de verdade</em></h1>
+  <p>Responda com sinceridade — assim eu chego na apresentação já sabendo exatamente onde você está e monto o plano certo pra sua realidade.</p>
+  <div class="time-chip">⏱ Leva menos de 4 minutos</div>
+</header>
+
+<div class="wrap">
+  <form id="leadForm" onsubmit="return false;">
+
+    <!-- ============ SEÇÃO 1 ============ -->
+    <div class="section">
+      <div class="sec-label"><div class="dot"></div><span>Parte 1</span></div>
+      <h2>Sobre você</h2>
+      <p class="sec-sub">O básico pra eu saber com quem estou falando.</p>
+
+      <div class="field">
+        <label class="q" for="nome">Nome completo <span class="req">*</span></label>
+        <input type="text" id="nome" name="Nome" required>
+      </div>
+
+      <div class="field">
+        <label class="q" for="whats">WhatsApp (com DDD) <span class="req">*</span></label>
+        <input type="tel" id="whats" name="WhatsApp" placeholder="(27) 99999-9999" required>
+      </div>
+
+      <div class="field">
+        <label class="q" for="insta">Seu @ no Instagram</label>
+        <input type="text" id="insta" name="Instagram" placeholder="@seuperfil">
+      </div>
+
+      <div class="field">
+        <label class="q" for="cidade">Cidade / Estado <span class="req">*</span></label>
+        <input type="text" id="cidade" name="Cidade" required>
+      </div>
+
+      <div class="field">
+        <label class="q" for="formatura">Em que ano você se formou? <span class="req">*</span></label>
+        <input type="text" id="formatura" name="Ano de formatura" placeholder="Ex.: 2024" required>
+      </div>
+    </div>
+
+    <!-- ============ SEÇÃO 2 ============ -->
+    <div class="section">
+      <div class="sec-label"><div class="dot"></div><span>Parte 2</span></div>
+      <h2>Sua rotina hoje</h2>
+      <p class="sec-sub">Como está o seu dia a dia clínico neste momento.</p>
+
+      <div class="field">
+        <label class="q">Como você trabalha atualmente? <span class="req">*</span></label>
+        <div class="opts" data-name="Situação atual" data-required="1">
+          <label class="opt"><input type="radio" name="situacao" value="Clínica popular / CLT">Atendo em clínica popular ou como CLT</label>
+          <label class="opt"><input type="radio" name="situacao" value="Autônomo em consultório de terceiros">Autônomo em consultório de terceiros (porcentagem/aluguel)</label>
+          <label class="opt"><input type="radio" name="situacao" value="Consultório próprio">Tenho consultório próprio</label>
+          <label class="opt"><input type="radio" name="situacao" value="Recém-formado sem rotina fixa">Recém-formado(a), ainda sem rotina fixa</label>
+          <label class="opt"><input type="radio" name="situacao" value="Outro">Outro</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">Quantos canais você trata por mês, em média? <span class="req">*</span></label>
+        <div class="opts" data-name="Canais por mês" data-required="1">
+          <label class="opt"><input type="radio" name="canais" value="Nenhum — encaminho tudo">Nenhum — encaminho todos os casos</label>
+          <label class="opt"><input type="radio" name="canais" value="1 a 3">1 a 3 canais</label>
+          <label class="opt"><input type="radio" name="canais" value="4 a 10">4 a 10 canais</label>
+          <label class="opt"><input type="radio" name="canais" value="Mais de 10">Mais de 10 canais</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">Você já deixou de fazer (ou encaminhou) um canal por insegurança? <span class="req">*</span></label>
+        <div class="opts" data-name="Encaminha por insegurança" data-required="1">
+          <label class="opt"><input type="radio" name="enc" value="Sim, com frequência">Sim, com frequência</label>
+          <label class="opt"><input type="radio" name="enc" value="Às vezes">Às vezes</label>
+          <label class="opt"><input type="radio" name="enc" value="Raramente ou nunca">Raramente ou nunca</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SEÇÃO 3 ============ -->
+    <div class="section">
+      <div class="sec-label"><div class="dot"></div><span>Parte 3</span></div>
+      <h2>Suas principais dores</h2>
+      <p class="sec-sub">Aqui é onde a conversa começa de verdade. Seja honesto(a).</p>
+
+      <div class="field">
+        <label class="q">Em quais etapas da endodontia você sente mais dificuldade? <span class="req">*</span><br><small style="font-weight:400;color:rgba(10,22,40,.55)">Pode marcar mais de uma</small></label>
+        <div class="opts" data-name="Dificuldades" data-required="1">
+          <label class="opt"><input type="checkbox" name="dif" value="Diagnóstico">Diagnóstico pulpar e periapical</label>
+          <label class="opt"><input type="checkbox" name="dif" value="Anestesia em pulpite">Anestesia (principalmente em pulpite)</label>
+          <label class="opt"><input type="checkbox" name="dif" value="Acesso endodôntico">Acesso endodôntico</label>
+          <label class="opt"><input type="checkbox" name="dif" value="Odontometria">Odontometria / comprimento de trabalho</label>
+          <label class="opt"><input type="checkbox" name="dif" value="Instrumentação">Instrumentação (rotatória/reciprocante)</label>
+          <label class="opt"><input type="checkbox" name="dif" value="Obturação">Obturação</label>
+          <label class="opt"><input type="checkbox" name="dif" value="Casos complexos / retratamento">Casos complexos e retratamento</label>
+          <label class="opt"><input type="checkbox" name="dif" value="Medo de complicações">Medo de fratura de lima / complicações</label>
+          <label class="opt"><input type="checkbox" name="dif" value="Precificação">Precificação e cobrança do tratamento</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">De 0 a 10, qual sua confiança pra iniciar um canal sozinho(a) amanhã? <span class="req">*</span></label>
+        <div class="slider-box">
+          <div class="slider-val" id="confVal">5</div>
+          <div class="slider-cap" id="confCap">Confiança moderada</div>
+          <input type="range" id="conf" min="0" max="10" value="5" step="1" aria-label="Nível de confiança de 0 a 10">
+          <div class="slider-ends"><span>0 · Travado(a)</span><span>10 · Total segurança</span></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q" for="frustra">Descreva a situação clínica que mais te frustra hoje <span class="req">*</span></label>
+        <textarea id="frustra" name="Maior frustração" placeholder="Ex.: paciente com pulpite que não anestesia, molar que não consigo localizar todos os canais..." required></textarea>
+      </div>
+
+      <div class="field">
+        <label class="q">O que você já tentou pra resolver isso?</label>
+        <div class="opts" data-name="Já tentou">
+          <label class="opt"><input type="checkbox" name="tentou" value="Cursos online">Cursos online gravados</label>
+          <label class="opt"><input type="checkbox" name="tentou" value="Pós/especialização">Pós-graduação / especialização</label>
+          <label class="opt"><input type="checkbox" name="tentou" value="YouTube e redes sociais">YouTube e redes sociais</label>
+          <label class="opt"><input type="checkbox" name="tentou" value="Pedir ajuda a colegas">Pedir ajuda a colegas mais experientes</label>
+          <label class="opt"><input type="checkbox" name="tentou" value="Nada ainda">Nada ainda — estou buscando o primeiro passo</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SEÇÃO 4 ============ -->
+    <div class="section">
+      <div class="sec-label"><div class="dot"></div><span>Parte 4</span></div>
+      <h2>Onde você quer chegar</h2>
+      <p class="sec-sub">Pra eu montar o caminho entre onde você está e onde quer estar.</p>
+
+      <div class="field">
+        <label class="q" for="meta">Como você quer que sua rotina esteja daqui a 12 meses? <span class="req">*</span></label>
+        <textarea id="meta" name="Objetivo em 12 meses" placeholder="Ex.: fazer meus próprios canais com segurança, montar agenda de endo, sair da clínica popular..." required></textarea>
+      </div>
+
+      <div class="field">
+        <label class="q">Quanto você gostaria de faturar por mês com endodontia?</label>
+        <div class="opts" data-name="Meta de faturamento">
+          <label class="opt"><input type="radio" name="fat" value="Até R$ 3 mil">Até R$ 3 mil</label>
+          <label class="opt"><input type="radio" name="fat" value="R$ 3 mil a R$ 8 mil">R$ 3 mil a R$ 8 mil</label>
+          <label class="opt"><input type="radio" name="fat" value="R$ 8 mil a R$ 15 mil">R$ 8 mil a R$ 15 mil</label>
+          <label class="opt"><input type="radio" name="fat" value="Acima de R$ 15 mil">Acima de R$ 15 mil</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q" for="pqagora">Por que AGORA é o momento de resolver isso? <span class="req">*</span></label>
+        <textarea id="pqagora" name="Por que agora" placeholder="O que mudou na sua vida ou carreira que te fez buscar ajuda neste momento?" required></textarea>
+      </div>
+
+      <div class="field">
+        <label class="q">Se a mentoria fizer sentido pra você, está pronto(a) pra investir no seu desenvolvimento? <span class="req">*</span></label>
+        <div class="opts" data-name="Prontidão para investir" data-required="1">
+          <label class="opt"><input type="radio" name="invest" value="Sim, estou pronto(a)">Sim — se fizer sentido, estou pronto(a)</label>
+          <label class="opt"><input type="radio" name="invest" value="Sim, mas preciso planejar">Sim, mas preciso me planejar financeiramente</label>
+          <label class="opt"><input type="radio" name="invest" value="Ainda não sei">Ainda não sei, quero entender melhor primeiro</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SUBMIT ============ -->
+    <div class="submit-area">
+      <div class="error-msg" id="errMsg">⚠️ Preencha todos os campos obrigatórios (*) antes de enviar.</div>
+      <button class="btn" id="sendBtn" type="button">Enviar respostas pelo WhatsApp →</button>
+      <p class="privacy">Suas respostas vão direto pro WhatsApp do Dr. Igor e são usadas apenas pra personalizar sua apresentação.</p>
+    </div>
+
+  </form>
+
+  <div id="success">
+    <div class="check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></div>
+    <h2>Respostas enviadas!</h2>
+    <p>Agora finalize o envio no WhatsApp que acabou de abrir. Te vejo na apresentação! 🦷</p>
+  </div>
+</div>
+
+<script>
+// ======= CONFIGURAÇÃO =======
+// Troque pelo seu número com código do país, só dígitos. Ex.: 5527999999999
+const WHATSAPP_NUMBER = "5527996209680";
+// ============================
+
+// visual state for option cards
+document.querySelectorAll('.opt input').forEach(inp=>{
+  inp.addEventListener('change',()=>{
+    const group = inp.closest('.opts');
+    if(inp.type==='radio'){
+      group.querySelectorAll('.opt').forEach(o=>o.classList.remove('checked'));
+    }
+    inp.closest('.opt').classList.toggle('checked', inp.checked);
+  });
+});
+
+// slider
+const conf = document.getElementById('conf');
+const confVal = document.getElementById('confVal');
+const confCap = document.getElementById('confCap');
+const caps = ["Totalmente travado(a)","Muito inseguro(a)","Muito inseguro(a)","Inseguro(a)","Inseguro(a)","Confiança moderada","Confiança moderada","Razoavelmente seguro(a)","Seguro(a)","Muito seguro(a)","Total segurança"];
+function updateSlider(){
+  const v = +conf.value;
+  confVal.textContent = v;
+  confCap.textContent = caps[v];
+  const pct = v*10;
+  conf.style.background = `linear-gradient(to right, var(--orange) 0%, var(--orange) ${pct}%, #e8dfd2 ${pct}%, #e8dfd2 100%)`;
+}
+conf.addEventListener('input', updateSlider);
+updateSlider();
+
+// collect + validate + send
+document.getElementById('sendBtn').addEventListener('click', ()=>{
+  const err = document.getElementById('errMsg');
+  err.style.display='none';
+  let valid = true;
+
+  // text/textarea required
+  document.querySelectorAll('input[required], textarea[required]').forEach(el=>{
+    el.style.borderColor='';
+    if(!el.value.trim()){ el.style.borderColor='#d9534f'; valid=false; }
+  });
+  // required option groups
+  document.querySelectorAll('.opts[data-required]').forEach(g=>{
+    const any = g.querySelector('input:checked');
+    g.style.outline='';
+    if(!any){ g.style.outline='2px solid #d9534f'; g.style.borderRadius='10px'; valid=false; }
+  });
+
+  if(!valid){
+    err.style.display='block';
+    err.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
+  const gv = id => document.getElementById(id).value.trim();
+  const radio = n => { const c=document.querySelector(`input[name="${n}"]:checked`); return c?c.value:'—'; };
+  const checks = n => { const c=[...document.querySelectorAll(`input[name="${n}"]:checked`)].map(i=>i.value); return c.length?c.join(', '):'—'; };
+
+  const msg =
+`*FORMULÁRIO PRÉ-APRESENTAÇÃO — MENTORIA*
+
+*👤 Sobre*
+Nome: ${gv('nome')}
+WhatsApp: ${gv('whats')}
+Instagram: ${gv('insta')||'—'}
+Cidade: ${gv('cidade')}
+Formatura: ${gv('formatura')}
+
+*🦷 Rotina*
+Situação: ${radio('situacao')}
+Canais/mês: ${radio('canais')}
+Encaminha por insegurança: ${radio('enc')}
+
+*⚠️ Dores*
+Dificuldades: ${checks('dif')}
+Confiança (0-10): ${conf.value}
+Maior frustração: ${gv('frustra')}
+Já tentou: ${checks('tentou')}
+
+*🎯 Objetivos*
+Em 12 meses: ${gv('meta')}
+Meta faturamento: ${radio('fat')}
+Por que agora: ${gv('pqagora')}
+Pronto pra investir: ${radio('invest')}`;
+
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+
+  document.getElementById('leadForm').style.display='none';
+  document.querySelector('header').scrollIntoView();
+  document.getElementById('success').style.display='block';
+});
+</script>
+</body>
+</html>
